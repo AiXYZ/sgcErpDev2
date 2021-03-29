@@ -17,9 +17,9 @@
                     {{ __('You are logged in!') }}
 
                     <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item">Dashboard</a>
-                        <a href="#" class="list-group-item">Request</a>
-                        <a href="#" class="list-group-item">Employee</a>
+                        <a href="{{ url('/') }}" class="list-group-item">Dashboard</a>
+                        <a href="{{ route('request') }}" class="list-group-item">Request</a>
+                        <a href="{{ route('employee') }}" class="list-group-item">Employee</a>
                     </div>
                 </div>
             </div>
