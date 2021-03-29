@@ -11,3 +11,4 @@ Auth::routes();
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/request', [RequestController::class, 'index'])->name('request');
 Route::get('/employee', [EmployeeController::class, 'index'])->name('employee');
+Route::post('/employee', [EmployeeController::class, 'store']);
