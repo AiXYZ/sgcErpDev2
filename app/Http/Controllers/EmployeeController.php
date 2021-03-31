@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use App\DataTables\EmployeeDataTable;
 
 class EmployeeController extends Controller
 {
@@ -12,13 +13,9 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(EmployeeDataTable $datatable)
     {
-        $employees = Employee::get();
-
-        return view('employee', [
-            'employees' => $employees
-        ]);
+        return $datatable->render('employee');
     }
 
     /**

@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('assets')
+    <!-- DataTables -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,6 +19,8 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('employees.store') }}">
                         @csrf
+
+                        <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
 
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
@@ -33,15 +45,13 @@
                         <button class="btn btn-primary" type="submit">Submit</button>
                     </form>
 
-                    @if($employees->count())
-                        <ul class="list-group list-group-flush">
-                            @foreach ($employees as $employee)
-                                <li class="list-group-item">{{ $employee->employee_id }} - {{ $employee->name }}</li>
-                            @endforeach
-                        </ul>
-                    @else
-                        <p class="d-flex justify-content-center"> There are no employees </p>
-                    @endif
+                    <div class="row pt-4">
+                        <div class="col-md-12">
+                            {!! $dataTable->table() !!}
+                        </div>
+                    </div>
+
+                    {!! $dataTable->scripts() !!}
                 </div>
             </div>
         </div>
