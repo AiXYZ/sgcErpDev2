@@ -19,9 +19,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('employees.store') }}">
                         @csrf
-
-                        <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
-
+                        
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <label for="employeeId">Employee ID</label>
