@@ -8,6 +8,9 @@
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+
+    {!! $dataTable->scripts() !!}
+
 @endsection
 
 @section('content')
@@ -19,7 +22,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('employees.store') }}">
                         @csrf
-                        
+
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <label for="employeeId">Employee ID</label>
@@ -49,7 +52,6 @@
                         </div>
                     </div>
 
-                    {!! $dataTable->scripts() !!}
                 </div>
             </div>
         </div>
