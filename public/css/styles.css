@@ -10,3 +10,12 @@
 .ai-nav-masthead .active {
     border-bottom: 0.25rem solid #3490dc;
 }
+
+.form-plain-label {
+    margin-bottom: 0;
+}
+
+.form-plain-input {
+    font-size: 1.2rem;
+    padding: 0;
+}

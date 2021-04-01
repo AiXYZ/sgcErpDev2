@@ -57,9 +57,14 @@ class EmployeeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'employee_id',
-            'name',
+            Column::make('id')->title('ID'),
+            Column::make('employee_id')->title('Employee ID'),
+            Column::make('name')->title('Name'),
+            Column::computed('action')
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(60)
+                  ->addClass('text-center'),
         ];
     }
 
