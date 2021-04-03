@@ -30,7 +30,11 @@
                                 @enderror
                             </div>
                         </div>
-                        <button class="btn btn-primary" type="submit">Submit</button>
+
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-secondary" href="{{ route('employees.index') }}" role="button">Back</a>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
                     </form>
 
                 </div>

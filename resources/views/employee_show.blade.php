@@ -21,7 +21,10 @@
                             </div>
                         </div>
 
-                        <a class="btn btn-secondary" href="{{ route('employees.index') }}" role="button">Back</a>
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-secondary" href="{{ route('employees.index') }}" role="button">Back</a>
+                            <a class="btn btn-primary" href="{{ route('employees.edit', $employee->id) }}" role="button">Edit</a>
+                        </div>
                     </form>
 
                 </div>
