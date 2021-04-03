@@ -25,7 +25,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employee_create');
     }
 
     /**
@@ -46,7 +46,7 @@ class EmployeeController extends Controller
             'name' => $request['name'],
         ]);
 
-        return back();
+        return redirect()->route('employees.index');
     }
 
     /**
