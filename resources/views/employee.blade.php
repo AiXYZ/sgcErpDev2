@@ -11,6 +11,15 @@
     
     {!! $dataTable->scripts() !!}
 
+    <script type = "text/javascript">
+        $(function() {
+            $('#employee-table tbody').on( 'click', '.ai-col-clickable', function () {
+                var id = $(this).closest("tr").find(".employee-id").data("id");
+                window.location.href = "employees/"+id;
+            });
+        });
+    </script>
+
 @endsection
 
 @section('content')
@@ -27,7 +36,7 @@
                 <div class="card-body">
                     <div class="row pt-4">
                         <div class="col-md-12">
-                            {!! $dataTable->table() !!}
+                            {!! $dataTable->table(['class' => 'table table-bordered table-hover']) !!}
                         </div>
                     </div>
 

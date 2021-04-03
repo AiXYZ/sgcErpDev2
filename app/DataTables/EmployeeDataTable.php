@@ -23,8 +23,8 @@ class EmployeeDataTable extends DataTable
             ->eloquent($query)
             ->addColumn('action', function($item) {
                 return '<div class="btn-group" role="group">
-                            <a class="btn btn-secondary" href="'.route('employees.show', $item->id).'" role="button">Show</a>
-                            <a class="btn btn-secondary" href="'.route('employees.edit', $item->id).'" role="button">Edit</a>
+                            <a class="btn btn-secondary btn-sm" href="'.route('employees.show', $item->id).'" role="button">Show</a>
+                            <a class="btn btn-secondary btn-sm employee-id" href="'.route('employees.edit', $item->id).'" role="button" data-id="'.$item->id.'">Edit</a>
                         </div>';
             });
     }
@@ -62,9 +62,9 @@ class EmployeeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('id')->title('ID'),
-            Column::make('employee_id')->title('Employee ID'),
-            Column::make('name')->title('Name'),
+            Column::make('id')->title('ID')->addClass('text-center ai-col-clickable'),
+            Column::make('employee_id')->title('Employee ID')->addClass('text-center ai-col-clickable'),
+            Column::make('name')->title('Name')->addClass('text-center ai-col-clickable'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
