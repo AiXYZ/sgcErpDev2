@@ -18,10 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\v1', 'as'=> 'v1'], function () {
-    Route::apiResource('employees', 'XyzController');
+    Route::apiResource('employees', XyzController::class);
 });
 
 Route::group(['prefix' => 'v2', 'namespace' => 'App\Http\Controllers\Api\v2', 'as'=> 'v2'], function () {
-    Route::apiResource('employees', 'XyzController');
+    Route::apiResource('employees', XyzController::class);
 });
